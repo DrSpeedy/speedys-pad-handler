@@ -13,7 +13,7 @@ keys['LEFT_AN_DOWN'] = 196
 keys['LEFT_AN_UP'] = 32
 
 require 'lib/natives-1627063482'
-require 'lib/Speedy/pad_handler.lua'
+require 'lib/Speedy/pad_handler'
 
 local bSuperJumpEnabled = false
 
@@ -35,7 +35,7 @@ end
 
 local function Init()
     StartPadHandler()
-    menu.toggle(menu.my_root, 'Super Jump Example', {}, '', function(toggle) DoSuperJump(toggle) end)
+    menu.toggle(menu.my_root(), 'Super Jump Example', {}, '', function(toggle) DoSuperJump(toggle) end)
 end
 
 Init()
