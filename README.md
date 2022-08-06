@@ -32,5 +32,10 @@ function SomeFunc()
     if (PadMultiTap('LB', 1)) then
         do_something()
     end
+
+    -- If LT is pressed once and not released and then X is tapped once and released
+    if (PadSingleTapHold('LT') and PadSingleTap('X')) then
+        do_something()
+    end
 end
 ```
