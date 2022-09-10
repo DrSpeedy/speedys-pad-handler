@@ -9,6 +9,7 @@ Github: https://github.com/DrSpeedy/speedys-pad-handler
  * <bool> CheckInput(cmd_str)
 ```
 # Opcodes
+```
 T: Tap
 H: Held Down (Delayed)
 D: Down
@@ -20,6 +21,7 @@ T, H Both can take a numeric argument with the following
 syntax: [T2], [H4]; If no arugment is supplied, the arg will
 default to 1. This argument is the number of taps needed to meet
 the input condition
+```
 
 # Examples:
 ```lua
@@ -47,7 +49,7 @@ function SomeFunc()
         do_something()
     end
 
-    -- If LT is pressed once and not released and then X is tapped once and released
+    -- If LT is just held down and then X is tapped once and released
     if (CheckInput('[D]LT:[T]X')) then
         do_something()
     end
