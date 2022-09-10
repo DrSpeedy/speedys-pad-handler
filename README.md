@@ -1,6 +1,12 @@
 # Speedy's Pad Handler
-Discord: DrSpeedy#1852
-Github: https://github.com/DrSpeedy/speedys-pad-handler
+* Discord: DrSpeedy#1852
+* Github: https://github.com/DrSpeedy/speedys-pad-handler
+
+## Overview
+Library for devs who want advnaced user input features without the headache. Quickly create functions for keyboard or controller using a markup language. Supports tap counting, holds, just down/up and cheat code style sequencing
+
+##### Questions
+Just DM me or ping me in #share-discussions
 
 # Functions:
 ```
