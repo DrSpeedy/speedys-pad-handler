@@ -8,6 +8,15 @@ Github: https://github.com/DrSpeedy/speedys-pad-handler
  * <void> StopPadHandler()
  * <bool> CheckInput(cmd_str)
 ```
+
+# Variables
+```
+iTickDelay = Number of ticks allowed between button taps/switching from single press to hold
+iPadIdx = Pad index to use when calling IS_CONTROL_PRESSED native
+SeqBufferSize = Max size of the sequence buffer
+bSeqIgnoreAnalogSticks = Add/don't add analog sticks to the seq buffer
+```
+
 # Opcodes
 ```
 T: Tap
@@ -35,6 +44,10 @@ CheckInput('[D]VK(48):[F]SEQ(RB,LB,X)')
 ```
 True when VK48 - Zero is held down and RB, LB, X are pressed
 in sequence on the controller
+
+# Example Script Included:
+ * Super jump - Double tap X on controller or Space on keyboard
+ * TP To Chiliad - LB + RB + X + A in sequence
 
 # More Examples:
 ```lua
