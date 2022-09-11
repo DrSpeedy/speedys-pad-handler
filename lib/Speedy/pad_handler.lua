@@ -6,7 +6,7 @@ local iTickDelay = 16 -- Number of ticks allowed between button taps/switching f
 local iPadIdx = 2
 local PadData = {}
 local SeqBuffer = {}
-local SeqBufferSize = 10
+local SeqBufferSize = 20
 local bSeqIgnoreAnalogSticks = true
 
 local function GetKeyStatus(key)
@@ -157,7 +157,7 @@ end
 
 -- New Hotness
 
-function SplitString(source, delimiters)
+local function SplitString(source, delimiters)
     local elements = {}
     local pattern = '([^'..delimiters..']+)'
 ---@diagnostic disable-next-line: discard-returns
@@ -165,7 +165,7 @@ function SplitString(source, delimiters)
     return elements
 end
 
-function ParseCmdString(cmd_str)
+local function ParseCmdString(cmd_str)
     local cmds = SplitString(cmd_str:upper(), ':')
     local data = {}
     for i = 1, #cmds do
@@ -257,4 +257,25 @@ function CheckInput(cmd_str)
         end
     end
     return true
+end
+
+function DisableControlThisTick(ctrl_key)
+	local ctrl_data = KEYS[ctrl_key]
+	for i = 1, #ctrl_data do
+		PAD.DISABLE_CONTROL_ACTION(iPadIdx, ctrl_data[i].id, true)
+	end
+end
+
+function DisableAllControlsThisTick(whitelist_tbl)
+	for k, v in pairs(KEYS) do
+		local skip_ctrl = false
+		for i = 1, #whitelist_tbl do
+			if (k == whitelist_tbl[i]) then
+				skip_ctrl = true
+			end
+		end
+		if (not skip_ctrl) then
+			DisableControlThisTick(k)
+		end
+	end
 end

@@ -63,7 +63,6 @@ KEYS={
             {id=311,name='INPUT_REPLAY_SHOWHOTKEY'}
     },
     DPAD_LEFT={
-            {id=15,name='INPUT_WEAPON_WHEEL_PREV'},
             {id=47,name='INPUT_DETONATE'},
             {id=52,name='INPUT_CONTEXT_SECONDARY'},
             {id=58,name='INPUT_THROW_GRENADE'},
@@ -77,7 +76,6 @@ KEYS={
             {id=312,name='INPUT_REPLAY_CYCLEMARKERLEFT'}
     },
     DPAD_RIGHT={
-            {id=14,name='INPUT_WEAPON_WHEEL_NEXT'},
             {id=46,name='INPUT_TALK'},
             {id=51,name='INPUT_CONTEXT'},
             {id=54,name='INPUT_WEAPON_SPECIAL_TWO'},
@@ -330,5 +328,10 @@ KEYS={
         {id=222,name='INPUT_SCRIPT_RUP'},
         {id=297,name='INPUT_REPLAY_CLIP_DELETE'},
         {id=348,name='INPUT_MAP_POI'}
+    },
+    UNUSED={
+        -- These activate on both Left/LT and Right/RT
+        {id=14,name='INPUT_WEAPON_WHEEL_NEXT'},
+        {id=15,name='INPUT_WEAPON_WHEEL_PREV'},
     }
 }

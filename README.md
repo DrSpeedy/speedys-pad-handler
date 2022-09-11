@@ -31,6 +31,8 @@ in sequence on the controller
  * <void> StartPadHandler()
  * <void> StopPadHandler()
  * <bool> CheckInput(cmd_str)
+ * <void> DisableControlThisTick(ctrl_key)
+ * <void> DisableAllControlsThisTick(whitelist_tbl)
 ```
 
 ### Variables:
@@ -59,6 +61,9 @@ the input condition
 ## More Examples:
 ```lua
 function SomeFunc()
+    -- Disable all input to game except for LEFT_STICK and RIGHT_STICK
+    DisableAllControlsThisTick({'LEFT_STICK', 'RIGHT_STICK'})
+
     -- If LB is pressed twice and held on the 2nd press
     if (CheckInput('[H2]LB')) then
         do_something()
@@ -71,6 +76,11 @@ function SomeFunc()
 
     -- If LT is just held down and then X is tapped once and released
     if (CheckInput('[D]LT:[T]X')) then
+        do_something()
+    end
+
+    -- If VK(48) and LB are down and RB is tapped 3 times
+    if (CheckInput('[D]VK(48):[D]LB:[T3]RB')) then
         do_something()
     end
 end
